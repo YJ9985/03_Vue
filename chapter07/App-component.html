@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Component Preview</title>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script setup>
+      import Checklist from './components/Checklist.vue';
+      import TodoPropsVue from './components/TodoProps.vue';
+
+      const app = Vue.createApp({
+        components: {
+          Checklist,
+          TodoPropsVue,
+        },
+        template: (
+          <div class="todo">
+            <h1>오늘의 할일</h1>
+            <Checklist />
+            <hr />
+            <TodoPropsVue todo="Vue 부수기" />
+            <TodoPropsVue todo="배열함수 끝장내기" />
+            <hr />
+            <h2>Vue 공부하기</h2>
+            <hr />
+            <h2>배열 함수 끝장내기</h2>
+            <hr />
+          </div>
+        ),
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>
